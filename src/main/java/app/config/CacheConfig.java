@@ -1,4 +1,4 @@
-package app.common.config;
+package app.config;
 
 
 import org.springframework.beans.factory.annotation.Value;

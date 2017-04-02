@@ -1,6 +1,6 @@
 package app.common.i18n.service.impl;
 
-import app.common.config.LocalizationConfig;
+import app.config.LocalizationConfig;
 import app.common.i18n.service.LocalizationService;
 import org.springframework.context.MessageSource;
 

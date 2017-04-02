@@ -1,4 +1,4 @@
-package app.common.config;
+package app.config;
 
 import app.common.i18n.service.LocalizationService;
 import app.common.i18n.service.impl.DefaultLocalizationService;

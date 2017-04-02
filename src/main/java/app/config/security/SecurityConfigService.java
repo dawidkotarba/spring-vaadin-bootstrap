@@ -1,4 +1,4 @@
-package app.common.config.security;
+package app.config.security;
 
 import app.common.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
