@@ -1,4 +1,4 @@
-package app.authentication.annotations;
+package app.authentication.model;
 
 import org.springframework.security.core.GrantedAuthority;
 

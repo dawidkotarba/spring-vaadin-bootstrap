@@ -1,6 +1,6 @@
 package app.authentication.service.impl;
 
-import app.authentication.annotations.UserRole;
+import app.authentication.model.UserRole;
 import app.authentication.service.AuthenticationService;
 import com.google.common.base.Preconditions;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

@@ -1,6 +1,6 @@
 package app.common.model;
 
-import app.authentication.annotations.UserRole;
+import app.authentication.model.UserRole;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
