@@ -1,7 +1,7 @@
-package app.authentication.service.impl;
+package app.auth.service.impl;
 
-import app.authentication.model.UserRole;
-import app.authentication.service.AuthenticationService;
+import app.auth.model.UserRole;
+import app.auth.service.AuthenticationService;
 import com.google.common.base.Preconditions;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -46,6 +46,6 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Override
     public boolean isAdmin() {
-        return hasCurrentUserAuthority(UserRole.ADMIN);
+        return hasCurrentUserAuthority(UserRole.ROLE_ADMIN);
     }
 }

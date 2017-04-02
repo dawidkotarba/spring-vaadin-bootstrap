@@ -1,5 +1,6 @@
 package app.common.view.service;
 
+import app.common.exceptions.model.AbstractApplicationRuntimeException;
 import com.vaadin.server.*;
 import com.vaadin.ui.AbstractComponent;
 import com.vaadin.ui.Notification;
@@ -10,16 +11,20 @@ import com.vaadin.ui.Notification;
  */
 public class CustomErrorHandler implements ErrorHandler {
     @Override
-    public void error(ErrorEvent errorEvent) {
-        AbstractComponent component = DefaultErrorHandler.findAbstractComponent(errorEvent);
-        if (component != null) {
-            ErrorMessage errorMessage = new UserError("error"); // TODO: 02.04.2017
-            if (errorMessage != null) {
-                component.setComponentError(errorMessage);
-                Notification.show("error", Notification.Type.ERROR_MESSAGE); // TODO: 02.04.2017
-                return;
-            }
-            DefaultErrorHandler.doDefault(errorEvent);
+    public void error(final ErrorEvent errorEvent) {
+        final Throwable throwable = errorEvent.getThrowable();
+        String userMessage = null;
+        if (throwable instanceof AbstractApplicationRuntimeException) {
+            userMessage = ((AbstractApplicationRuntimeException) throwable).getUserMessage();
+            Notification.show(userMessage, Notification.Type.ERROR_MESSAGE);
         }
+
+        final AbstractComponent component = DefaultErrorHandler.findAbstractComponent(errorEvent);
+        if (component != null && userMessage != null) {
+            ErrorMessage errorMessage = new UserError(userMessage);
+            component.setComponentError(errorMessage);
+            return;
+        }
+        DefaultErrorHandler.doDefault(errorEvent);
     }
 }

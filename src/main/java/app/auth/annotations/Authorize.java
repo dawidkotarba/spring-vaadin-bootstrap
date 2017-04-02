@@ -1,6 +1,6 @@
-package app.authentication.annotations;
+package app.auth.annotations;
 
-import app.authentication.model.UserRole;
+import app.auth.model.UserRole;
 
 import java.lang.annotation.*;
 

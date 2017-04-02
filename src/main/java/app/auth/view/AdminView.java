@@ -1,4 +1,4 @@
-package app.authentication.view;
+package app.auth.view;
 
 import app.login.service.LoginService;
 import com.vaadin.server.VaadinRequest;

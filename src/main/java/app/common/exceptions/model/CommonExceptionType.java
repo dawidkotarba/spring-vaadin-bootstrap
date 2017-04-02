@@ -1,5 +1,5 @@
 package app.common.exceptions.model;
 
 public enum CommonExceptionType implements ExceptionType {
-    NOT_FOUND, INTERNAL_ERROR
+    NOT_FOUND, NOT_AUTHORIZED, INTERNAL_ERROR
 }

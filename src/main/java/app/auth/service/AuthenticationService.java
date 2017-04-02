@@ -1,6 +1,6 @@
-package app.authentication.service;
+package app.auth.service;
 
-import app.authentication.model.UserRole;
+import app.auth.model.UserRole;
 import org.springframework.security.core.Authentication;
 
 import java.util.Set;

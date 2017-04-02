@@ -1,6 +1,6 @@
 package app.registration.service.impl;
 
-import app.authentication.model.UserRole;
+import app.auth.model.UserRole;
 import app.common.model.User;
 import app.common.repository.UserRepository;
 import app.registration.service.RegistrationService;

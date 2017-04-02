@@ -1,13 +1,13 @@
-package app.authentication.view;
+package app.auth.view;
 
-import app.authentication.model.UserRole;
-import app.common.exceptions.model.InternalErrorException;
+import app.auth.model.UserRole;
 import app.common.model.User;
 import app.common.repository.UserRepository;
 import app.common.view.components.*;
 import app.login.service.LoginService;
 import app.registration.service.RegistrationService;
 import com.vaadin.data.Binder;
+import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.spring.annotation.UIScope;
@@ -32,8 +32,8 @@ public class LoginView extends HorizontalLayout implements View {
     @Override
     public void enter(final ViewChangeListener.ViewChangeEvent viewChangeEvent) {
         if (userRepository.findAll().isEmpty()) {
-            registrationService.registerUser("test", "test", UserRole.ADMIN);
-            registrationService.registerUser("test2", "test", UserRole.CUSTOMER);
+            registrationService.registerUser("t@t.pl", "test", UserRole.ROLE_ADMIN);
+            registrationService.registerUser("t2@t.pl", "test", UserRole.ROLE_CUSTOMER);
         }
 
         Panel panel = new Panel("test");
@@ -78,9 +78,10 @@ public class LoginView extends HorizontalLayout implements View {
 //            loginService.logOut();
 //        });
 
-        Button button2 = new Button("error");
+        Button button2 = new Button("security");
         button2.addClickListener(clickEvent -> {
-            throw new InternalErrorException("blad");
+            final Navigator navigator = UI.getCurrent().getNavigator();
+            navigator.navigateTo("test");
         });
 
         formLayout.addComponent(button2);
