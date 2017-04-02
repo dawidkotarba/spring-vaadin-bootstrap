@@ -16,7 +16,7 @@ public class CustomErrorHandler implements ErrorHandler {
             ErrorMessage errorMessage = new UserError("error"); // TODO: 02.04.2017
             if (errorMessage != null) {
                 component.setComponentError(errorMessage);
-                Notification.show("error", Notification.Type.ERROR_MESSAGE);// TODO: 02.04.2017
+                Notification.show("error", Notification.Type.ERROR_MESSAGE); // TODO: 02.04.2017
                 return;
             }
             DefaultErrorHandler.doDefault(errorEvent);
